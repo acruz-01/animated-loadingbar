@@ -1,0 +1,58 @@
+body{
+    background: #222222;
+}
+.content {
+	width: 50%;
+}
+.wrapper {
+	display: grid;
+	place-items: center;
+	height: 90vh;
+}
+.content h2 {
+	margin: 10px 0;
+	font-family: montserrat;
+	color: #fff;
+	opacity: .5;
+	font-weight: 300;
+}
+.loading-bar {
+	position: relative;
+	height: 20px;
+	width: 100%;
+	border: 1;
+	background: #2a2a2a;
+	border-radius: 50px;
+}
+span {
+	display: block;
+	position: relative;
+	height: 100%;
+	border-radius: 50px;
+	background-image: linear-gradient(to bottom, #fff, #2df364 30%);
+	overflow: hidden;
+}
+span:after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-image: linear-gradient( -45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	z-index: 1;
+	background-size: 50px 50px;
+	overflow: hidden;
+}
+.loading-bar>span:after, .animate>span>span {
+	animation: load .88s infinite;
+}
+@keyframes load {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 50px 50px;
+	}
+}
+
